@@ -53,8 +53,7 @@ function transformDocument(schema, documentNode) {
             result.fragments.push(transform_fragment_document_1.transformFragment(schema, definitionNode, overrideName));
         }
         else {
-            __1.logger.warn("It seems like you provided an invalid GraphQL document: ");
-            __1.logger.warn(definitionNode);
+            logger.warn(`It seems like you provided an invalid GraphQL document of kind "${definitionNode.kind}".`);
         }
     });
     result.hasFragments = result.fragments.length > 0;
